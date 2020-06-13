@@ -18,7 +18,7 @@ make docker-run
 docker exec -it alpine-xfce-vnc bash
 supervisorctl status
 
-# TigerVNC
+# tigervnc-viewer
 vncviewer localhost:5900
 
 # novnc
