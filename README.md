@@ -2,23 +2,28 @@
 
 > TODO description
 
-* DockerHub
+* Docker Hub
 * Helm chart
 
 ## Development
 
-Temporary images for testing
-
 ```bash
-# alpine
-docker run --rm --name alpine -it alpine:edge
+# build image
+make docker-build
 
-# ubuntu
-docker run --rm --name phusion phusion/baseimage:master-amd64
-docker exec -it phusion bash
+# run temporary container
+make docker-run
 
+# access container
 docker exec -it alpine-xfce-vnc bash
 supervisorctl status
 
-http://localhost:6080/vnc.html
+# TigerVNC
+vncviewer localhost:5900
+
+# novnc
+xdg-open http://localhost:6080
+
+# cleanup
+make docker-clean
 ```

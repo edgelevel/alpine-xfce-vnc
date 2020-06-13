@@ -19,6 +19,7 @@ RUN apk add --no-cache supervisor && \
   sed -i -r -f /tmp/supervisor.sed /etc/supervisord.conf && \
   mkdir -p /etc/supervisor/conf.d /var/log/novnc /var/log/x11vnc /var/log/xfce4 /var/log/xvfb && \
   mv /tmp/supervisor-*.ini /etc/supervisor/conf.d/ && \
-  rm -fr /tmp/supervisor*
+  rm -fr /tmp/supervisor* && \
+  ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 
 CMD ["supervisord", "-c", "/etc/supervisord.conf", "-n"]

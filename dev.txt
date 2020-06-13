@@ -1,3 +1,12 @@
+# alpine
+docker run --rm --name alpine -it alpine:edge
+
+# ubuntu
+docker run --rm --name phusion phusion/baseimage:master-amd64
+docker exec -it phusion bash
+
+##############################
+
 * X Window System (X11, or simply X) is an architecture-independent system for remote graphical user interfaces and input device capabilities
 * Xvfb (short for X virtual framebuffer) is an in-memory display server. It enables you to run graphical applications without a display
 * Xfce is a lightweight desktop environment
