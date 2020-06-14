@@ -1,3 +1,5 @@
+.DEFAULT_GOAL := docker-run
+
 require-%:
 	@ if [ "$(shell command -v ${*} 2> /dev/null)" = "" ]; then \
 		echo "[$*] not found"; \
@@ -21,7 +23,7 @@ docker-build: require-docker
 	docker build -t $(DOCKER_IMAGE) .
 
 .PHONY: docker-run
-docker-run: require-docker
+docker-run: require-docker docker-build
 	docker run --rm --name $(DOCKER_IMAGE_NAME) -it -p 5900:5900 -p 6080:6080 $(DOCKER_IMAGE)
 
 .PHONY: docker-clean
