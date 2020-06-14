@@ -15,7 +15,7 @@ docker run --rm \
   edgelevel/alpine-xfce-vnc
 ```
 
-[TigerVNC](https://tigervnc.org) client
+Connect using [TigerVNC](https://tigervnc.org) client
 
 ```bash
 # tigervnc-viewer
@@ -26,7 +26,7 @@ vncviewer localhost:5900
   <img src="screenshots/tigervnc.png" height="400" alt="tigervnc">
 </p>
 
-[noVNC](https://novnc.com/info.html) client
+Connect using [noVNC](https://novnc.com/info.html) client
 
 ```bash
 # (mac|linux) novnc via browser
