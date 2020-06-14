@@ -1,6 +1,20 @@
 # alpine-xfce-vnc
 
-Lightweight Alpine image with Xfce, VNC and novnc
+[Alpine](https://alpinelinux.org) docker image with [Xfce4](https://xfce.org), [x11vnc](http://www.karlrunge.com/x11vnc) and [noVNC](https://novnc.com/info.html)
+
+## Example
+
+Using [TigerVNC](https://tigervnc.org) client
+
+<p align="center">
+  <img src="screenshots/tigervnc.png" height="400" alt="tigervnc">
+</p>
+
+Using [noVNC](https://novnc.com/info.html) client
+
+<p align="center">
+  <img src="screenshots/novnc.png" height="400" alt="novnc">
+</p>
 
 ## Development
 
