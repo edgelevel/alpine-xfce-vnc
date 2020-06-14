@@ -26,10 +26,10 @@ vncviewer localhost:5900
   <img src="screenshots/tigervnc.png" height="400" alt="tigervnc">
 </p>
 
-Connect using [noVNC](https://novnc.com/info.html) client
+Connect using [noVNC](https://novnc.com/info.html) via browser
 
 ```bash
-# (mac|linux) novnc via browser
+# (mac|linux) novnc
 [open|xdg-open] http://localhost:6080
 ```
 
