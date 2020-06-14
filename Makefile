@@ -12,7 +12,7 @@ check-param-%:
 
 ##############################
 
-DOCKER_USERNAME := niqdev
+DOCKER_USERNAME := edgelevel
 DOCKER_IMAGE_NAME := alpine-xfce-vnc
 DOCKER_IMAGE := $(DOCKER_USERNAME)/$(DOCKER_IMAGE_NAME)
 
