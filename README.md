@@ -1,9 +1,6 @@
 # alpine-xfce-vnc
 
-> TODO description
-
-* Docker Hub
-* Helm chart
+Lightweight Alpine image with Xfce, VNC and novnc
 
 ## Development
 

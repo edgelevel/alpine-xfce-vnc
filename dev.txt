@@ -7,53 +7,63 @@ docker exec -it phusion bash
 
 ##############################
 
+TODO
+* Docker Hub
+* Helm chart
+
+##############################
+
 * X Window System (X11, or simply X) is an architecture-independent system for remote graphical user interfaces and input device capabilities
-* Xvfb (short for X virtual framebuffer) is an in-memory display server. It enables you to run graphical applications without a display
 * Xfce is a lightweight desktop environment
+* Xvfb (short for X virtual framebuffer) is an in-memory display server and it allows to run graphical applications without a display
 * XDM (X Display Manager) is the default display manager for the X Window System
 * Virtual Network Computing (VNC) is a graphical desktop-sharing system
 * x11vnc: a VNC server for real X displays
-* TigerVNC is a high-performance, platform-neutral implementation of VNC (Virtual Network Computing), a client/server application that allows users to launch and interact with graphical applications on remote machines
+* TigerVNC is a high-performance, platform-neutral implementation of VNC (Virtual Network Computing) and provides a client/server application
+
+##############################
 
 # ubuntu
-
-https://github.com/accetto/ubuntu-vnc-xfce-firefox-plus
-https://stackoverflow.com/questions/47955823/docker-run-desktop-environment
-https://github.com/x11vnc/x11vnc-desktop
-https://github.com/rogaha/docker-desktop
-https://github.com/paimpozhil/docker-novnc
-https://github.com/danielguerra69/ubuntu-xrdp
-# >>> WORKS <<<
 https://github.com/fcwu/docker-ubuntu-vnc-desktop
 https://github.com/ct2034/docker-ubuntu-vnc-desktop
 https://github.com/ConSol/docker-headless-vnc-container
 https://github.com/solarkennedy/wine-x11-novnc-docker
-
+https://github.com/mviereck/x11docker
+https://github.com/accetto/ubuntu-vnc-xfce-firefox-plus
+https://github.com/x11vnc/x11vnc-desktop
+https://github.com/rogaha/docker-desktop
+https://github.com/paimpozhil/docker-novnc
+https://github.com/danielguerra69/ubuntu-xrdp
+https://github.com/epfl-sti/octave-x11-novnc-docker
+https://stackoverflow.com/questions/47955823/docker-run-desktop-environment
 https://linuxize.com/post/how-to-install-and-configure-vnc-on-ubuntu-18-04
 https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04
 https://www.cyberciti.biz/faq/install-and-configure-tigervnc-server-on-ubuntu-18-04
 https://www.journaldev.com/34074/install-tigervnc-on-ubuntu
-https://xtramemory.wordpress.com/2019/04/30/how-to-setup-vnc-x11vnc-on-ubuntu/
+https://xtramemory.wordpress.com/2019/04/30/how-to-setup-vnc-x11vnc-on-ubuntu
 
 # alpine
 https://github.com/jkuri/alpine-xfce4
+https://github.com/doug-w/docker-novnc
 https://github.com/kramergroup/vnc-alpine
 https://github.com/WangCharlie/alpine-ssh-xfce4-vnc
-https://github.com/shaharv/docTigerVNC is a high-performance, platform-neutral implementation of VNC (Virtual Network Computing), a client/server application that allows users to launch and interact with graphical applications on remote machinesker
-https://github.com/doug-w/docker-novnc
+https://github.com/shaharv/docker/blob/master/alpine/dev/Dockerfile
 https://github.com/danielguerra69/alpine-xfce4-xrdp
-
 https://wiki.alpinelinux.org/wiki/Xfce_Setup
 https://www.amitnepal.com/alpine-linux-with-xfce-and-vnc-on-a-virtual-machine
 https://dev.to/nesterow/setup-minimal-kiosk-environment-with-alpine-linux-27b
 https://troglobit.com/2017/09/10/install-x-window-in-alpine-linux
 
-# other
-https://www.maketecheasier.com/set-up-xfce-arch-linux/
+# arch
+https://www.maketecheasier.com/set-up-xfce-arch-linux
 https://linoxide.com/linux-how-to/install-configure-tigervnc-arch-linux
-https://github.com/epfl-sti/octave-x11-novnc-docker
 
-# general
+# xvfb
+http://elementalselenium.com/tips/38-headless
+https://stackoverflow.com/questions/12050021/how-to-make-xvfb-display-visible
+https://stackoverflow.com/questions/32151043/xvfb-docker-cannot-open-display
+
+# other
 https://dl.bintray.com/tigervnc/stable
 https://itsfoss.com/best-linux-desktop-environments
 https://www.techrepublic.com/article/how-to-connect-to-vnc-using-ssh
@@ -61,8 +71,3 @@ https://linuxmeerkat.wordpress.com/2014/10/17/running-a-gui-application-in-a-doc
 http://wiki.ros.org/docker/Tutorials/GUI
 https://towardsdatascience.com/real-time-and-video-processing-object-detection-using-tensorflow-opencv-and-docker-2be1694726e5
 https://www.serverself.com/setup-lubuntu-tightvnc-and-novnc-for-a-vps
-
-# xvfb
-http://elementalselenium.com/tips/38-headless
-https://stackoverflow.com/questions/12050021/how-to-make-xvfb-display-visible
-https://stackoverflow.com/questions/32151043/xvfb-docker-cannot-open-display
