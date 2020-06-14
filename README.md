@@ -1,9 +1,18 @@
 # alpine-xfce-vnc
 
-![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/edgelevel/alpine-xfce-vnc?style=flat-square)
-![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/edgelevel/alpine-xfce-vnc?style=flat-square)
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/edgelevel/alpine-xfce-vnc/latest?color=blueviolet&style=flat-square)
-![Docker Image Version (latest semver)](https://img.shields.io/docker/v/edgelevel/alpine-xfce-vnc?style=flat-square)
+[![Docker Cloud Build Status][build-image]][build-url]
+[![Docker Cloud Automated build][build-automated-image]][build-automated-url]
+[![Docker Image Size (tag)][size-image]][size-url]
+[![GitHub tag (latest by date)][tag-image]][tag-url]
+
+[build-image]: https://img.shields.io/docker/cloud/build/edgelevel/alpine-xfce-vnc?style=flat-square
+[build-url]: https://hub.docker.com/r/edgelevel/alpine-xfce-vnc
+[build-automated-image]: https://img.shields.io/docker/cloud/automated/edgelevel/alpine-xfce-vnc?style=flat-square
+[build-automated-url]: https://hub.docker.com/r/edgelevel/alpine-xfce-vnc/builds
+[size-image]: https://img.shields.io/docker/image-size/edgelevel/alpine-xfce-vnc/latest?color=blueviolet&style=flat-square
+[size-url]: https://hub.docker.com/r/edgelevel/alpine-xfce-vnc
+[tag-image]: https://img.shields.io/github/v/tag/edgelevel/alpine-xfce-vnc?color=orange&style=flat-square
+[tag-url]: https://hub.docker.com/r/edgelevel/alpine-xfce-vnc/tags
 
 [Alpine](https://alpinelinux.org) docker image with [Xfce4](https://xfce.org), [x11vnc](http://www.karlrunge.com/x11vnc) and [noVNC](https://novnc.com/info.html)
 
