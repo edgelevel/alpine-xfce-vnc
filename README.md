@@ -18,11 +18,17 @@
 
 ```bash
 # pull latest image
-docker run --rm \
-  -it -p 5900:5900 -p 6080:6080 \
+docker run -it --rm \
+  -p 5900:5900 -p 6080:6080 \
   --name alpine-xfce-vnc \
   edgelevel/alpine-xfce-vnc
 ```
+
+Multiple versions are available with the following tags
+* `base`, `base-x.y.z` and `latest`
+* `web`, `web-x.y.z`
+
+---
 
 Connect using [TigerVNC](https://tigervnc.org) client
 
