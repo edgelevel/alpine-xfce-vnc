@@ -1,0 +1,30 @@
+# TODO arg ?
+ENV USER="alpine"
+ENV HOME="/home/${USER}"
+ENV PASSWORD="alpine"
+
+# add sudo user
+RUN apk add --no-cache \
+  bash \
+  sudo && \
+  addgroup -S sudo && \
+  sed -i -r 's/# %sudo/%sudo/' /etc/sudoers && \
+  addgroup -g 1000 -S ${USER} && \
+  adduser -h ${HOME} -s /bin/bash -G ${USER} -S -D -u 1000 ${USER} && \
+  addgroup ${USER} sudo && \
+  echo "${USER}:${PASSWORD}" | chpasswd && \
+  chown -R ${USER}:${USER} ${HOME}
+
+COPY --chown=1000 .bashrc ${HOME}
+USER ${USER}
+WORKDIR ${HOME}
+
+# FIX supervisor permissions
+#user="%(ENV_USER)s"
+#environment=HOME="%(ENV_HOME)s",USER="%(ENV_USER)s"
+
+# change wallpaper
+xfconf-query -c xfce4-desktop -p /backdrop -lv
+xdg-open /usr/share/backgrounds/xfce/xfce-stripes.png
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s /usr/share/backgrounds/xfce/xfce-blue.png
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorscreen/workspace0/last-image -s /usr/share/backgrounds/xfce/xfce-blue.png

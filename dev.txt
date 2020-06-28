@@ -56,6 +56,7 @@ https://troglobit.com/2017/09/10/install-x-window-in-alpine-linux
 
 # alpine browsers
 https://github.com/ellerbrock/docker-collection
+https://github.com/ellerbrock/docker-collection/blob/master/dockerfiles/alpine-firefox/Dockerfile
 https://github.com/woahbase/alpine-firefox/blob/master/Dockerfile_x86_64
 https://github.com/shaharv/docker/blob/master/alpine/google-chrome/Dockerfile
 https://github.com/Zenika/alpine-chrome
