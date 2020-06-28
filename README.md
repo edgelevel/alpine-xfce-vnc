@@ -49,7 +49,7 @@ Connect using [noVNC](https://novnc.com/info.html) via browser
 ## Development
 
 ```bash
-# build images [base|base-latest|web|web-latest]
+# build images [base|web]
 make docker-build
 
 # run temporary container
