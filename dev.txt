@@ -54,6 +54,18 @@ https://www.amitnepal.com/alpine-linux-with-xfce-and-vnc-on-a-virtual-machine
 https://dev.to/nesterow/setup-minimal-kiosk-environment-with-alpine-linux-27b
 https://troglobit.com/2017/09/10/install-x-window-in-alpine-linux
 
+# alpine browsers
+https://github.com/ellerbrock/docker-collection
+https://github.com/woahbase/alpine-firefox/blob/master/Dockerfile_x86_64
+https://github.com/shaharv/docker/blob/master/alpine/google-chrome/Dockerfile
+https://github.com/Zenika/alpine-chrome
+
+# alpine apk
+https://pkgs.alpinelinux.org/packages
+https://stackoverflow.com/questions/49118579/alpine-dockerfile-advantages-of-no-cache-vs-rm-var-cache-apk
+https://github.com/mhart/alpine-node/issues/48#issuecomment-370171836
+http://askubuntu.com/questions/523949/what-is-a-system-group-as-opposed-to-a-normal-group
+
 # arch
 https://www.maketecheasier.com/set-up-xfce-arch-linux
 https://linoxide.com/linux-how-to/install-configure-tigervnc-arch-linux
@@ -62,6 +74,10 @@ https://linoxide.com/linux-how-to/install-configure-tigervnc-arch-linux
 http://elementalselenium.com/tips/38-headless
 https://stackoverflow.com/questions/12050021/how-to-make-xvfb-display-visible
 https://stackoverflow.com/questions/32151043/xvfb-docker-cannot-open-display
+
+# init
+https://github.com/Yelp/dumb-init
+http://supervisord.org
 
 # other
 https://dl.bintray.com/tigervnc/stable
