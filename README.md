@@ -49,11 +49,11 @@ Connect using [noVNC](https://novnc.com/info.html) via browser
 ## Development
 
 ```bash
-# build image
+# build images [base|base-latest|web|web-latest]
 make docker-build
 
 # run temporary container
-make docker-run
+make docker-run tag=base
 
 # access container
 docker exec -it alpine-xfce-vnc bash

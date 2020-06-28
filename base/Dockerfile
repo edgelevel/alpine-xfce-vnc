@@ -4,13 +4,14 @@ ENV DISPLAY :1
 # alternative 1024x768x16
 ENV RESOLUTION 1920x1080x24
 
+# setup desktop environment (xfce4), display server (xvfb), vnc server (x11vnc)
 RUN apk add --no-cache \
   xfce4 \
   faenza-icon-theme \
   xvfb \
   x11vnc
 
-# setup novnc
+# setup novnc (requires bash)
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
   bash \
   novnc && \

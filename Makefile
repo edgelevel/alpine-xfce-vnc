@@ -20,19 +20,20 @@ DOCKER_IMAGE := $(DOCKER_USERNAME)/$(DOCKER_IMAGE_NAME)
 
 .PHONY: docker-build
 docker-build: require-docker
-	docker build -t $(DOCKER_IMAGE) .
+	docker build -t $(DOCKER_IMAGE):base -t $(DOCKER_IMAGE):base-latest base/
+	#docker build -t $(DOCKER_IMAGE):web -t $(DOCKER_IMAGE):web-latest web/
 
 .PHONY: docker-run
-docker-run: require-docker docker-build
-	docker run --rm --name $(DOCKER_IMAGE_NAME) -it -p 5900:5900 -p 6080:6080 $(DOCKER_IMAGE)
+docker-run: require-docker check-param-tag docker-build
+	docker run --rm --name $(DOCKER_IMAGE_NAME) -it -p 5900:5900 -p 6080:6080 $(DOCKER_IMAGE):${tag}
 
 .PHONY: docker-clean
 docker-clean: require-docker
 	# remove container by name
 	docker ps -a -q -f name=$(DOCKER_IMAGE_NAME) | xargs --no-run-if-empty docker rm -f
-	# remove image by name
-	docker images -q $(DOCKER_IMAGE) | xargs --no-run-if-empty docker rmi -f
 	# delete dangling images <none>
 	docker images -q -f dangling=true | xargs --no-run-if-empty docker rmi -f
+	# remove image by name
+	docker images -q $(DOCKER_IMAGE) | xargs --no-run-if-empty docker rmi -f
 	# delete dangling volumes
 	docker volume ls -q -f dangling=true | xargs --no-run-if-empty docker volume rm -f
