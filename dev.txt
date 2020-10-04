@@ -23,6 +23,8 @@ TODO
 
 ##############################
 
+https://unix.stackexchange.com/questions/596894/how-does-linuxs-display-work
+
 # ubuntu
 https://github.com/fcwu/docker-ubuntu-vnc-desktop
 https://github.com/ct2034/docker-ubuntu-vnc-desktop
