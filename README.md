@@ -25,8 +25,9 @@ docker run -it --rm \
 ```
 
 Multiple versions are available with the following tags
-* `base`, `base-x.y.z` and `latest`
+* `base`, `base-x.y.z`, `x.y.z` and `latest`
 * `web`, `web-x.y.z`
+* `sec`, `sec-x.y.z`
 
 ---
 

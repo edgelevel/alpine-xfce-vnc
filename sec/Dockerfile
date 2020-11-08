@@ -1,6 +1,6 @@
 FROM edgelevel/alpine-xfce-vnc:web
 
-# install python and pip
+# setup python and pip
 # http://github.com/Docker-Hub-frolvlad/docker-alpine-python3
 ENV PYTHONUNBUFFERED=1
 RUN apk add --no-cache \
