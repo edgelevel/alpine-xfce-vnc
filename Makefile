@@ -8,8 +8,8 @@ require-%:
 
 check-param-%:
 	@ if [ "${${*}}" = "" ]; then \
-	    echo "Missing parameter: [$*]"; \
-	    exit 1; \
+		echo "Missing parameter: [$*]"; \
+		exit 1; \
 	fi
 
 ##############################
