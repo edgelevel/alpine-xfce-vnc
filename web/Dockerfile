@@ -30,8 +30,15 @@ RUN apk add --no-cache \
   pip3 install --no-cache --upgrade pip setuptools wheel && \
   ln -sf pip3 /usr/bin/pip
 
-COPY .bashrc /root
-COPY .vimrc /root
-COPY bg-* /usr/share/backgrounds/linux/
+# setup sdkman
+RUN curl -s "https://get.sdkman.io" | bash && \
+  source $HOME/.sdkman/bin/sdkman-init.sh && \
+  sdk version && \
+  rm -rf $HOME/.sdkman/tmp/*
+
+# update configs
+COPY .bashrc .vimrc /root/
+# change background
+COPY bg-kernel.png /usr/share/backgrounds/xfce/xfce-custom.png
 
 WORKDIR /root

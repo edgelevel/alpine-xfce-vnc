@@ -20,13 +20,13 @@ DOCKER_IMAGE := $(DOCKER_USERNAME)/$(DOCKER_IMAGE_NAME)
 
 .PHONY: docker-build
 docker-build: require-docker
-	#docker build -t $(DOCKER_IMAGE):base -t $(DOCKER_IMAGE):latest base/
+	docker build -t $(DOCKER_IMAGE):base -t $(DOCKER_IMAGE):latest base/
 	docker build -t $(DOCKER_IMAGE):web web/
-	#docker build -t $(DOCKER_IMAGE):sec sec/
+	docker build -t $(DOCKER_IMAGE):sec sec/
 
 .PHONY: docker-run
 docker-run: require-docker check-param-tag docker-build
-	docker run --rm --name $(DOCKER_IMAGE_NAME) -it -p 5900:5900 -p 6080:6080 $(DOCKER_IMAGE):${tag}
+	docker run --rm --name $(DOCKER_IMAGE_NAME) --hostname alpine -it -p 5900:5900 -p 6080:6080 $(DOCKER_IMAGE):${tag}
 
 .PHONY: docker-clean
 docker-clean: require-docker

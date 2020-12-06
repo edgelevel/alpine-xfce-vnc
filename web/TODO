@@ -23,17 +23,9 @@ WORKDIR ${HOME}
 #user="%(ENV_USER)s"
 #environment=HOME="%(ENV_HOME)s",USER="%(ENV_USER)s"
 
-# change wallpaper
+# change wallpaper: can't run xfconf-query or sed before supervisor starts
 xfconf-query -c xfce4-desktop -p /backdrop -lv
 xdg-open /usr/share/backgrounds/xfce/xfce-stripes.png
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s /usr/share/backgrounds/xfce/xfce-blue.png
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorscreen/workspace0/last-image -s /usr/share/backgrounds/xfce/xfce-blue.png
-
-# setup sdkman
-RUN curl -s "https://get.sdkman.io" | bash && \
-  source $HOME/.sdkman/bin/sdkman-init.sh && \
-  sdk version && \
-  rm -rf $HOME/.sdkman/tmp/*
-
-https://serverfault.com/questions/683605/docker-container-time-timezone-will-not-reflect-changes
-https://github.com/ogham/exa/issues/453
+sed -i 's/xfce-stripes/xfce-blue/g' .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml

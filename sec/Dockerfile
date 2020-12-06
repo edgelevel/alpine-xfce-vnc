@@ -8,3 +8,5 @@ RUN apk add --no-cache \
   openvpn \
   nmap \
   nmap-scripts
+
+COPY bg-root.png /usr/share/backgrounds/xfce/xfce-custom.png
