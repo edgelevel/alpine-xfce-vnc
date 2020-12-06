@@ -90,3 +90,7 @@ https://linuxmeerkat.wordpress.com/2014/10/17/running-a-gui-application-in-a-doc
 http://wiki.ros.org/docker/Tutorials/GUI
 https://towardsdatascience.com/real-time-and-video-processing-object-detection-using-tensorflow-opencv-and-docker-2be1694726e5
 https://www.serverself.com/setup-lubuntu-tightvnc-and-novnc-for-a-vps
+
+# backgrounds
+https://itsfoss.com/customize-xfce
+https://itsfoss.com/best-gtk-themes
