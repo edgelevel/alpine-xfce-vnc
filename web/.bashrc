@@ -10,3 +10,8 @@ alias ll='exa -lah'
 export HISTFILESIZE=
 export HISTSIZE=
 export HISTTIMEFORMAT="[%F %T] "
+
+function load {
+    xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorscreen/workspace0/last-image -s $1
+}
+load /usr/share/backgrounds/linux/bg-kernel.png

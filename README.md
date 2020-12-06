@@ -56,10 +56,10 @@ Connect using [noVNC](https://novnc.com/info.html) via browser
 ## Development
 
 ```bash
-# build images [base|web]
+# build images
 make docker-build
 
-# run temporary container
+# run temporary container [base|web|sec]
 make docker-run tag=base
 
 # access container
