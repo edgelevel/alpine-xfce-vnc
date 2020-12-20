@@ -21,6 +21,7 @@
 docker run -it --rm \
   -p 5900:5900 -p 6080:6080 \
   --name alpine-xfce-vnc \
+  --hostname alpine \
   edgelevel/alpine-xfce-vnc
 ```
 
@@ -68,4 +69,8 @@ supervisorctl status
 
 # cleanup
 make docker-clean
+
+# publish a new version on dockerhub
+git tag vX.Y.Z
+git push origin --tags
 ```

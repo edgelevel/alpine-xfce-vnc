@@ -30,6 +30,10 @@ RUN apk add --no-cache \
   pip3 install --no-cache --upgrade pip setuptools wheel && \
   ln -sf pip3 /usr/bin/pip
 
+# setup gcc
+RUN apk add --no-cache \
+  gcc make
+
 # setup sdkman
 RUN curl -s "https://get.sdkman.io" | bash && \
   source $HOME/.sdkman/bin/sdkman-init.sh && \
