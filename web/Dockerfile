@@ -17,7 +17,8 @@ RUN apk add --no-cache \
   httpie \
   jq \
   lynx \
-  tmux
+  tmux \
+  openssh
 
 # setup python and pip
 # http://github.com/Docker-Hub-frolvlad/docker-alpine-python3
