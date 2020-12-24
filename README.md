@@ -18,7 +18,7 @@
 
 ```bash
 # pull latest image
-docker run -it --rm \
+docker run --rm \
   -p 5900:5900 -p 6080:6080 \
   --name alpine-xfce-vnc \
   --hostname alpine \
