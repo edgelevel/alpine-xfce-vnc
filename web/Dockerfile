@@ -33,7 +33,7 @@ RUN apk add --no-cache \
 
 # setup gcc
 RUN apk add --no-cache \
-  gcc make
+  gcc musl-dev make
 
 # setup sdkman
 RUN curl -s "https://get.sdkman.io" | bash && \
