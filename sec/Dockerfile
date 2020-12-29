@@ -12,6 +12,7 @@ RUN apk add --no-cache \
   openssh \
   openvpn \
   nmap \
-  nmap-scripts
+  nmap-scripts \
+  john
 
 COPY bg-root.png /usr/share/backgrounds/xfce/xfce-custom.png

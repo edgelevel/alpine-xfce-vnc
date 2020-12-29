@@ -4,18 +4,24 @@ RUN apk add --no-cache \
   firefox-esr \
   xfce4-terminal
 
+# image viewer
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
   nomacs
 
 # add packages
 RUN apk add --no-cache \
+  tzdata \
   exa \
+  fd \
+  ripgrep \
   git \
   vim \
   zip \
   curl \
   httpie \
-  jq
+  jq \
+  ncdu \
+  htop
 
 # setup python and pip
 # http://github.com/Docker-Hub-frolvlad/docker-alpine-python3
