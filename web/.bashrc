@@ -1,3 +1,6 @@
+# splash screen
+echo -e "\n$(neofetch)"
+
 # PROMPT
 # http://ezprompt.net
 export PS1="\[\e[34m\]\u\[\e[m\]@\h \[\e[32m\]\w\[\e[m\] \\$ "

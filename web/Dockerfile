@@ -8,6 +8,9 @@ RUN apk add --no-cache \
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
   nomacs
 
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
+  bat
+
 # add packages
 RUN apk add --no-cache \
   tzdata \
@@ -22,7 +25,8 @@ RUN apk add --no-cache \
   httpie \
   jq \
   ncdu \
-  htop
+  htop \
+  neofetch
 
 # setup python and pip
 # http://github.com/Docker-Hub-frolvlad/docker-alpine-python3

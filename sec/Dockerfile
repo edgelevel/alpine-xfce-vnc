@@ -12,7 +12,8 @@ RUN apk add --no-cache \
   openssh \
   openvpn \
   nmap \
-  nmap-scripts
+  nmap-scripts \
+  proxychains-ng
 
 # setup searchsploit (requires tput)
 RUN apk add --no-cache \
