@@ -43,6 +43,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vn
 https://www.cyberciti.biz/faq/install-and-configure-tigervnc-server-on-ubuntu-18-04
 https://www.journaldev.com/34074/install-tigervnc-on-ubuntu
 https://xtramemory.wordpress.com/2019/04/30/how-to-setup-vnc-x11vnc-on-ubuntu
+https://github.com/schuellerf/xfce-test
 
 # alpine
 https://github.com/jkuri/alpine-xfce4
