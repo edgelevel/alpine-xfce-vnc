@@ -11,6 +11,7 @@ RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/te
 # add packages
 RUN apk add --no-cache \
   tzdata \
+  file \
   exa \
   fd \
   ripgrep \
@@ -47,6 +48,6 @@ RUN curl -s "https://get.sdkman.io" | bash && \
 # update configs
 COPY .bashrc .vimrc /root/
 # change background
-COPY bg-kernel.png /usr/share/backgrounds/xfce/xfce-custom.png
+COPY bg-kernel.png /usr/share/backgrounds/xfce/xfce-stripes.png
 
 WORKDIR /root

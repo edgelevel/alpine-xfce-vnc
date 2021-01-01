@@ -11,11 +11,11 @@ export HISTFILESIZE=
 export HISTSIZE=
 export HISTTIMEFORMAT="[%F %T] "
 
+# example: "change_background /usr/share/backgrounds/xfce/xfce-blue.png"
 function change_background {
   local BACKGROUND_PATH=${1:?"Invalid BACKGROUND_PATH"}
   xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorscreen/workspace0/last-image -s $BACKGROUND_PATH
 }
-change_background /usr/share/backgrounds/xfce/xfce-custom.png
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
