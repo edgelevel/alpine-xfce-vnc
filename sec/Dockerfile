@@ -12,7 +12,12 @@ RUN apk add --no-cache \
   openssh \
   openvpn \
   nmap \
-  nmap-scripts \
-  john
+  nmap-scripts
 
-COPY bg-root.png /usr/share/backgrounds/xfce/xfce-custom.png
+# setup searchsploit (requires tput)
+RUN apk add --no-cache \
+  ncurses && \
+  git clone https://github.com/offensive-security/exploitdb.git /opt/exploitdb && \
+  ln -sf /opt/exploitdb/searchsploit /usr/local/bin/searchsploit
+
+COPY bg-root.png /usr/share/backgrounds/xfce/xfce-stripes.png
