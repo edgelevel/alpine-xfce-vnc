@@ -77,10 +77,12 @@ git push origin --tags
 
 ### Known issues
 
-The first time you access the container, expect this error: *Plugin "Power Manager Plugin" unexpectedly left the panel, do you want to restart it?*
+The first time you access the container, expect the following error
+
+> Plugin "Power Manager Plugin" unexpectedly left the panel, do you want to restart it?
 
 <p align="center">
-  <img src="screenshots/power-manager-plugin-error.png" height="400" alt="power-manager-plugin-error">
+  <img src="screenshots/power-manager-plugin-error.png" height="200" alt="power-manager-plugin-error">
 </p>
 
 As explained [here](https://bugzilla.xfce.org/show_bug.cgi?id=15666), *The plugin doesn't work in the container due to a lack of upower in docker, so this is not a bug but a limitation of docker*
