@@ -1,21 +1,21 @@
 FROM edgelevel/alpine-xfce-vnc:base
 
+# setup timezone
+# https://gitlab.alpinelinux.org/alpine/aports/-/issues/5543
 # /usr/share/zoneinfo/Europe/Dublin
 ARG TZ='Europe/Dublin'
 ENV DEFAULT_TZ ${TZ}
-
-# https://gitlab.alpinelinux.org/alpine/aports/-/issues/5543
 RUN apk upgrade --update && \
   apk add --no-cache tzdata && \
   cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
-  apk del tzdata && \
   date
 
+# add gui
 RUN apk add --no-cache \
   firefox-esr \
   xfce4-terminal
 
-# image viewer
+# setup image viewer
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
   nomacs
 
@@ -50,11 +50,9 @@ RUN apk add --no-cache \
 RUN apk add --no-cache \
   gcc musl-dev make
 
-# setup sdkman
-RUN curl -s "https://get.sdkman.io" | bash && \
-  source $HOME/.sdkman/bin/sdkman-init.sh && \
-  sdk version && \
-  rm -rf $HOME/.sdkman/tmp/*
+# setup java
+RUN apk add --no-cache \
+  openjdk11-jdk
 
 # update configs
 COPY .bashrc .vimrc /root/

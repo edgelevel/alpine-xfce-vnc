@@ -1,3 +1,5 @@
+--- add user: issue with supervisor
+
 # TODO arg ?
 ENV USER="alpine"
 ENV HOME="/home/${USER}"
@@ -23,9 +25,24 @@ WORKDIR ${HOME}
 #user="%(ENV_USER)s"
 #environment=HOME="%(ENV_HOME)s",USER="%(ENV_USER)s"
 
+--- background: issue on startup
+
 # change wallpaper: can't run xfconf-query or sed before supervisor starts
 xfconf-query -c xfce4-desktop -p /backdrop -lv
 xdg-open /usr/share/backgrounds/xfce/xfce-stripes.png
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s /usr/share/backgrounds/xfce/xfce-blue.png
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorscreen/workspace0/last-image -s /usr/share/backgrounds/xfce/xfce-blue.png
 sed -i 's/xfce-stripes/xfce-blue/g' .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+
+--- java: musl libc issue
+
+https://github.com/gliderlabs/docker-alpine/issues/11
+https://github.com/sgerrand/alpine-pkg-glibc
+https://github.com/flyway/flyway/issues/2510
+
+# setup sdkman and jdk-11
+RUN curl -s "https://get.sdkman.io" | bash && \
+  source $HOME/.sdkman/bin/sdkman-init.sh && \
+  sdk version && \
+  rm -rf $HOME/.sdkman/tmp/* && \
+  sdk install java 11.0.2-open
