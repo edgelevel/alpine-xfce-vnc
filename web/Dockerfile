@@ -1,5 +1,16 @@
 FROM edgelevel/alpine-xfce-vnc:base
 
+# /usr/share/zoneinfo/Europe/Dublin
+ARG TZ='Europe/Dublin'
+ENV DEFAULT_TZ ${TZ}
+
+# https://gitlab.alpinelinux.org/alpine/aports/-/issues/5543
+RUN apk upgrade --update && \
+  apk add --no-cache tzdata && \
+  cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
+  apk del tzdata && \
+  date
+
 RUN apk add --no-cache \
   firefox-esr \
   xfce4-terminal
@@ -10,7 +21,6 @@ RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/te
 
 # add packages
 RUN apk add --no-cache \
-  tzdata \
   file \
   exa \
   fd \
