@@ -17,12 +17,12 @@ RUN apk add --no-cache \
   nmap-scripts \
   proxychains-ng
 
+# TODO add and fix "searchsploit -u"
 # setup searchsploit (requires tput)
 RUN apk add --no-cache \
   ncurses && \
   git clone https://github.com/offensive-security/exploitdb.git /opt/exploitdb && \
-  ln -sf /opt/exploitdb/searchsploit /usr/local/bin/searchsploit && \
-  searchsploit -u
+  ln -sf /opt/exploitdb/searchsploit /usr/local/bin/searchsploit
 
 # setup burp suite
 COPY burpsuite /usr/local/bin/burpsuite
