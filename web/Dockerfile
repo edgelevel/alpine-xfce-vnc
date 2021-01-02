@@ -8,9 +8,6 @@ RUN apk add --no-cache \
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
   nomacs
 
-RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
-  bat
-
 # add packages
 RUN apk add --no-cache \
   tzdata \
