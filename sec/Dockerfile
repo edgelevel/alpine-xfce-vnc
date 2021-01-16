@@ -25,11 +25,11 @@ RUN apk add --no-cache \
   ln -sf /opt/exploitdb/searchsploit /usr/local/bin/searchsploit
 
 # setup burp suite
-COPY burpsuite /usr/local/bin/burpsuite
 RUN mkdir -pv /opt/burp/ && \
   wget -q -O /opt/burp/burpsuite_community_v${BURP_VERSION}.jar \
   https://portswigger.net/burp/releases/download?product=community\&version=${BURP_VERSION}\&type=jar && \
   ln -sf /opt/burp/burpsuite_community_v${BURP_VERSION}.jar /opt/burp/burpsuite.jar && \
+  echo "java -jar /opt/burp/burpsuite.jar" > /usr/local/bin/burpsuite && \
   chmod u+x /usr/local/bin/burpsuite
 
 COPY bg-root.png /usr/share/backgrounds/xfce/xfce-stripes.png
