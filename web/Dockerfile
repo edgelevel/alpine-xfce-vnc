@@ -46,12 +46,12 @@ RUN apk add --no-cache \
   pip3 install --no-cache --upgrade pip setuptools wheel && \
   ln -sf pip3 /usr/bin/pip
 
-# setup gcc
+# setup gcc, go, java
 RUN apk add --no-cache \
-  gcc musl-dev make
-
-# setup java
-RUN apk add --no-cache \
+  musl-dev \
+  gcc \
+  make \
+  go \
   openjdk11-jdk
 
 # update configs

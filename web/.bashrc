@@ -19,3 +19,6 @@ function change_background {
   local BACKGROUND_PATH=${1:?"Invalid BACKGROUND_PATH"}
   xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorscreen/workspace0/last-image -s $BACKGROUND_PATH
 }
+
+# GOLANG
+export PATH="$(go env GOPATH)/bin:$PATH"

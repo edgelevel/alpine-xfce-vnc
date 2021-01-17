@@ -15,7 +15,8 @@ RUN apk add --no-cache \
   openvpn \
   nmap \
   nmap-scripts \
-  proxychains-ng
+  proxychains-ng \
+  exiftool
 
 # TODO add and fix "searchsploit -u"
 # setup searchsploit (requires tput)
@@ -23,6 +24,13 @@ RUN apk add --no-cache \
   ncurses && \
   git clone https://github.com/offensive-security/exploitdb.git /opt/exploitdb && \
   ln -sf /opt/exploitdb/searchsploit /usr/local/bin/searchsploit
+
+# setup fuzzers and wordlists
+RUN mkdir -p /usr/share/wordlists && \
+  curl -s -k -L http://mng.bz/DzMn -o /usr/share/wordlists/rockyou.txt && \
+  git clone https://github.com/danielmiessler/SecLists.git /usr/share/seclists && \
+  go get -u github.com/OJ/gobuster && \
+  go get -u github.com/ffuf/ffuf
 
 # setup burp suite
 RUN mkdir -pv /opt/burp/ && \
