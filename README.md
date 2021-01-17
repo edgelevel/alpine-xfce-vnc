@@ -85,4 +85,4 @@ The first time you access the container, expect the following error
   <img src="screenshots/power-manager-plugin-error.png" height="200" alt="power-manager-plugin-error">
 </p>
 
-As explained [here](https://bugzilla.xfce.org/show_bug.cgi?id=15666), *The plugin doesn't work in the container due to a lack of upower in docker, so this is not a bug but a limitation of docker*
+As explained [here](https://bugzilla.xfce.org/show_bug.cgi?id=15666), *The plugin doesn't work in the container due to a lack of power in docker, so this is not a bug but a limitation of docker*
