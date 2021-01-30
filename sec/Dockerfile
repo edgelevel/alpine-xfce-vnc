@@ -11,6 +11,7 @@ RUN apk add --no-cache \
   lynx \
   tmux \
   bind-tools \
+  socat \
   openssh \
   openvpn \
   nmap \
@@ -34,11 +35,12 @@ RUN mkdir -p /usr/share/wordlists && \
   go get -u github.com/ffuf/ffuf
 
 # setup burp suite
+# forward internal port 8080 and listen on 8081
 RUN mkdir -pv /opt/burp/ && \
   wget -q -O /opt/burp/burpsuite_community_v${BURP_VERSION}.jar \
   https://portswigger.net/burp/releases/download?product=community\&version=${BURP_VERSION}\&type=jar && \
   ln -sf /opt/burp/burpsuite_community_v${BURP_VERSION}.jar /opt/burp/burpsuite.jar && \
-  echo "java -jar /opt/burp/burpsuite.jar" > /usr/local/bin/burpsuite && \
+  echo -e "echo 'Burp Suite LISTEN on port 8081 ...'\nsocat tcp-l:8081,fork,reuseaddr tcp:127.0.0.1:8080 &\njava -jar /opt/burp/burpsuite.jar" > /usr/local/bin/burpsuite && \
   chmod u+x /usr/local/bin/burpsuite
 
 # setup privesc
