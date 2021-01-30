@@ -16,7 +16,8 @@ RUN apk add --no-cache \
   nmap \
   nmap-scripts \
   proxychains-ng \
-  exiftool
+  exiftool \
+  john
 
 # TODO add and fix "searchsploit -u"
 # setup searchsploit (requires tput)
@@ -39,5 +40,11 @@ RUN mkdir -pv /opt/burp/ && \
   ln -sf /opt/burp/burpsuite_community_v${BURP_VERSION}.jar /opt/burp/burpsuite.jar && \
   echo "java -jar /opt/burp/burpsuite.jar" > /usr/local/bin/burpsuite && \
   chmod u+x /usr/local/bin/burpsuite
+
+# setup privesc
+RUN git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git \
+  /opt/privilege-escalation-awesome-scripts-suite && \
+  git clone https://github.com/rebootuser/LinEnum.git \
+  /opt/LinEnum
 
 COPY bg-root.png /usr/share/backgrounds/xfce/xfce-stripes.png
