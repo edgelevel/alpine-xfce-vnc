@@ -17,6 +17,7 @@ RUN apk add --no-cache \
   nmap \
   nmap-scripts \
   proxychains-ng \
+  wireshark \
   exiftool \
   john
 
