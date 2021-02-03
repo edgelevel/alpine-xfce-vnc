@@ -57,8 +57,4 @@ RUN apk add --no-cache \
 # update configs
 COPY .bashrc .vimrc /root/
 
-# TODO fixme
-# change background
-COPY bg-kernel.png /usr/share/backgrounds/xfce/xfce-stripes.png
-
 WORKDIR /root
