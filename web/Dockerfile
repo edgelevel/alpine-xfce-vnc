@@ -10,30 +10,30 @@ RUN apk upgrade --update && \
   cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
   date
 
-# add gui
+# setup common
 RUN apk add --no-cache \
-  firefox-esr \
-  xfce4-terminal
+  git \
+  vim \
+  zip
 
-# setup image viewer
-RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
-  nomacs
-
-# add packages
+# setup filesystem
 RUN apk add --no-cache \
   file \
   exa \
   fd \
-  ripgrep \
-  git \
-  vim \
-  zip \
+  ripgrep
+
+# setup network
+RUN apk add --no-cache \
+  bind-tools \
   curl \
   httpie \
-  jq \
+  jq
+
+# setup monitor
+RUN apk add --no-cache \
   ncdu \
-  htop \
-  neofetch
+  htop
 
 # setup python and pip
 # http://github.com/Docker-Hub-frolvlad/docker-alpine-python3
@@ -53,6 +53,21 @@ RUN apk add --no-cache \
   make \
   go \
   openjdk11-jdk
+
+# setup browser
+RUN apk add --no-cache \
+  firefox-esr \
+  lynx
+
+# setup terminal
+RUN apk add --no-cache \
+  xfce4-terminal \
+  tmux \
+  neofetch
+
+# setup image viewer
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+  nomacs
 
 # update configs
 COPY .bashrc .vimrc /root/
