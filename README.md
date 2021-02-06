@@ -28,7 +28,6 @@ docker run --rm \
 Multiple versions are available with the following tags
 * `base`, `base-x.y.z`, `x.y.z` and `latest`
 * `web`, `web-x.y.z`
-* `sec`, `sec-x.y.z`
 
 ---
 
@@ -60,7 +59,7 @@ Connect using [noVNC](https://novnc.com/info.html) via browser
 # build images
 make docker-build
 
-# run temporary container [base|web|sec]
+# run temporary container [base|web]
 make docker-run tag=base
 
 # access container

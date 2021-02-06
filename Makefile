@@ -22,7 +22,6 @@ DOCKER_IMAGE := $(DOCKER_USERNAME)/$(DOCKER_IMAGE_NAME)
 docker-build: require-docker
 	docker build -t $(DOCKER_IMAGE):base -t $(DOCKER_IMAGE):latest base/
 	docker build -t $(DOCKER_IMAGE):web web/
-	docker build -t $(DOCKER_IMAGE):sec sec/
 
 .PHONY: docker-run
 docker-run: require-docker check-param-tag docker-build

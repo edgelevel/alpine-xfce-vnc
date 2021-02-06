@@ -1,6 +1,6 @@
-TODO add sudo user in base image
-
 --- add user: issue with supervisor
+
+>>> add sudo user in base image
 
 # TODO arg ?
 ENV USER="alpine"
@@ -48,3 +48,8 @@ RUN curl -s "https://get.sdkman.io" | bash && \
   sdk version && \
   rm -rf $HOME/.sdkman/tmp/* && \
   sdk install java 11.0.2-open
+
+--- install dog
+
+# TODO install rustc in web and replace bind-tools (dig) with dog (nslookup is already included in busybox)
+wget -qO - https://github.com/ogham/dog/releases/download/v0.1.0/dog-v0.1.0-x86_64-unknown-linux-gnu.zip | busybox unzip -
