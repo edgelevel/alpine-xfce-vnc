@@ -8,6 +8,9 @@ export PS1="\[\e[34m\]\u\[\e[m\]@\h \[\e[32m\]\w\[\e[m\] \\$ "
 # ALIAS
 export EXA_COLORS="da=1;31"
 alias ll='exa -lah'
+# https://unix.stackexchange.com/questions/159253/decoding-url-encoding-percent-encoding
+alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
+alias urlencode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
 
 # HISTORY
 export HISTFILESIZE=
