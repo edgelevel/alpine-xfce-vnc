@@ -46,13 +46,19 @@ RUN apk add --no-cache \
   pip3 install --no-cache --upgrade pip setuptools wheel && \
   ln -sf pip3 /usr/bin/pip
 
-# setup gcc, go, java
+# setup gcc
 RUN apk add --no-cache \
   musl-dev \
   gcc \
-  make \
-  go \
+  make
+
+# setup java
+RUN apk add --no-cache \
   openjdk11-jdk
+
+# setup golang
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
+  go
 
 # setup browser
 RUN apk add --no-cache \
