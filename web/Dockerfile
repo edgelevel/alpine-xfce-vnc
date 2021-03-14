@@ -60,6 +60,9 @@ RUN apk add --no-cache \
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
   go
 
+# setup rust
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
 # setup browser
 RUN apk add --no-cache \
   firefox-esr \
