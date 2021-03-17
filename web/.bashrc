@@ -25,3 +25,6 @@ function change_background {
 
 # GOLANG
 export PATH="$(go env GOPATH)/bin:$PATH"
+
+# RUST
+[[ -f ~/.cargo/env ]] && source ~/.cargo/env
