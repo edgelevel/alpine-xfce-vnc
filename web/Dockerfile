@@ -1,6 +1,6 @@
 FROM edgelevel/alpine-xfce-vnc:base
 
-# setup timezone
+# timezone
 # https://gitlab.alpinelinux.org/alpine/aports/-/issues/5543
 # /usr/share/zoneinfo/Europe/Dublin
 ARG TZ='Europe/Dublin'
@@ -10,32 +10,13 @@ RUN apk upgrade --update && \
   cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
   date
 
-# setup common
+# commons
 RUN apk add --no-cache \
   git \
   vim \
   zip
 
-# setup filesystem
-RUN apk add --no-cache \
-  file \
-  exa \
-  fd \
-  ripgrep
-
-# setup network
-RUN apk add --no-cache \
-  bind-tools \
-  curl \
-  httpie \
-  jq
-
-# setup monitor
-RUN apk add --no-cache \
-  ncdu \
-  htop
-
-# setup python and pip
+# python and pip
 # http://github.com/Docker-Hub-frolvlad/docker-alpine-python3
 ENV PYTHONUNBUFFERED=1
 RUN apk add --no-cache \
@@ -46,35 +27,53 @@ RUN apk add --no-cache \
   pip3 install --no-cache --upgrade pip setuptools wheel && \
   ln -sf pip3 /usr/bin/pip
 
-# setup gcc
+# gcc
 RUN apk add --no-cache \
   musl-dev \
   gcc \
   make
 
-# setup java
+# java
 RUN apk add --no-cache \
   openjdk11-jdk
 
-# setup golang
+# golang
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
   go
 
-# setup rust
+# rust
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
-# setup browser
+# filesystem
+RUN apk add --no-cache \
+  exa \
+  fd \
+  ripgrep
+
+# networking
+RUN apk add --no-cache \
+  bind-tools \
+  curl \
+  httpie \
+  jq
+
+# monitoring
+RUN apk add --no-cache \
+  ncdu \
+  htop
+
+# browsers
 RUN apk add --no-cache \
   firefox-esr \
   lynx
 
-# setup terminal
+# terminals
 RUN apk add --no-cache \
   xfce4-terminal \
   tmux \
   neofetch
 
-# setup image viewer
+# image viewer
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
   nomacs
 

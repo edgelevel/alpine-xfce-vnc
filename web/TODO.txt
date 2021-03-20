@@ -53,3 +53,6 @@ RUN curl -s "https://get.sdkman.io" | bash && \
 
 # TODO install rustc in web and replace bind-tools (dig) with dog (nslookup is already included in busybox)
 wget -qO - https://github.com/ogham/dog/releases/download/v0.1.0/dog-v0.1.0-x86_64-unknown-linux-gnu.zip | busybox unzip -
+# build from source
+# error: failed to run custom build command for `openssl-sys v0.9.58`
+cargo install --git https://github.com/ogham/dog
