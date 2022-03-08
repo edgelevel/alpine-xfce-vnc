@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM alpine:3.15
 
 ENV DISPLAY :1
 # alternative 1024x768x16
@@ -11,15 +11,17 @@ RUN apk add --no-cache \
   xvfb \
   x11vnc
 
-# setup novnc (requires bash)
+# setup novnc
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
-  bash \
   novnc && \
   ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 
+# required for command expansion
+RUN apk add --no-cache bash
+SHELL ["/bin/bash", "-c"]
+
 # setup supervisor
 COPY supervisor /tmp
-SHELL ["/bin/bash", "-c"]
 RUN apk add --no-cache supervisor && \
   echo_supervisord_conf > /etc/supervisord.conf && \
   sed -i -r -f /tmp/supervisor.sed /etc/supervisord.conf && \
