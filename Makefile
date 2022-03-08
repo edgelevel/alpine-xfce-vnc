@@ -25,7 +25,7 @@ docker-build: require-docker
 
 .PHONY: docker-run
 docker-run: require-docker check-param-tag docker-build
-	docker run --rm --name $(DOCKER_IMAGE_NAME) --hostname alpine -p 5900:5900 -p 6080:6080 $(DOCKER_IMAGE):${tag}
+	docker run --rm --name $(DOCKER_IMAGE_NAME) --hostname alpine -p 5900:5900 -p 6080:6080 --security-opt seccomp=unconfined $(DOCKER_IMAGE):${tag}
 
 .PHONY: docker-clean
 docker-clean: require-docker

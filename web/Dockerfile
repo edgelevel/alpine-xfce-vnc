@@ -33,6 +33,13 @@ RUN apk add --no-cache \
   gcc \
   make
 
+# networking
+RUN apk add --no-cache \
+  bind-tools \
+  curl \
+  httpie \
+  jq
+
 # java
 RUN apk add --no-cache \
   openjdk11-jdk
@@ -49,13 +56,6 @@ RUN apk add --no-cache \
   exa \
   fd \
   ripgrep
-
-# networking
-RUN apk add --no-cache \
-  bind-tools \
-  curl \
-  httpie \
-  jq
 
 # monitoring
 RUN apk add --no-cache \
@@ -74,8 +74,7 @@ RUN apk add --no-cache \
   neofetch
 
 # image viewer
-RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
-  nomacs
+# TODO nomacs | viu | imv
 
 # update configs
 COPY .bashrc .vimrc /root/

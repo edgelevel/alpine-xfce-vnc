@@ -17,7 +17,8 @@ RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/te
   ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 
 # required for command expansion
-RUN apk add --no-cache bash
+RUN apk add --no-cache \
+  bash
 SHELL ["/bin/bash", "-c"]
 
 # setup supervisor
