@@ -89,7 +89,7 @@ As explained [here](https://bugzilla.xfce.org/show_bug.cgi?id=15666), *The plugi
 > Failed to execute child process "ash" Failed to fdwalk: Operation not permitted
 
 <p align="center">
-  <img src="screenshots/xfce-terminal-error.png" height="200" alt="power-manager-plugin-error">
+  <img src="screenshots/xfce-terminal-error.png" height="300" alt="power-manager-plugin-error">
 </p>
 
 As temporary solution run the container with `--security-opt seccomp=unconfined`
