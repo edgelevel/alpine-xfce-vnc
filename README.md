@@ -71,7 +71,10 @@ make docker-clean
 
 # publish a new version on dockerhub
 git tag vX.Y.Z
-git push origin --tags
+
+# NOT WORKING anymore
+#git push origin --tags
+#make docker-push docker-password=<PASSWORD>
 ```
 
 ### Known issues

@@ -17,10 +17,11 @@ check-param-%:
 DOCKER_USERNAME := edgelevel
 DOCKER_IMAGE_NAME := alpine-xfce-vnc
 DOCKER_IMAGE := $(DOCKER_USERNAME)/$(DOCKER_IMAGE_NAME)
+GIT_TAG_LATEST := $(shell git describe --abbrev=0 --tags | sed 's/v//g')
 
 .PHONY: docker-build
 docker-build: require-docker
-	docker build -t $(DOCKER_IMAGE):base -t $(DOCKER_IMAGE):latest base/
+	docker build -t $(DOCKER_IMAGE):base base/
 	docker build -t $(DOCKER_IMAGE):web web/
 
 .PHONY: docker-run
@@ -37,3 +38,15 @@ docker-clean: require-docker
 	docker images -q $(DOCKER_IMAGE) | xargs --no-run-if-empty docker rmi -f
 	# delete dangling volumes
 	docker volume ls -q -f dangling=true | xargs --no-run-if-empty docker volume rm -f
+
+.PHONY: docker-login
+docker-login: check-param-docker-password
+	echo ${docker-password} | docker login -u $(DOCKER_USERNAME) --password-stdin
+
+.PHONY: docker-push
+docker-push: docker-build docker-login
+	docker tag $(DOCKER_IMAGE):base $(DOCKER_IMAGE):latest
+	docker tag $(DOCKER_IMAGE):base $(DOCKER_IMAGE):$(GIT_TAG_LATEST)
+	docker tag $(DOCKER_IMAGE):base $(DOCKER_IMAGE):base-$(GIT_TAG_LATEST)
+	docker tag $(DOCKER_IMAGE):web $(DOCKER_IMAGE):web-$(GIT_TAG_LATEST)
+	docker image push --all-tags $(DOCKER_IMAGE)
