@@ -71,10 +71,9 @@ make docker-clean
 
 # publish a new version on dockerhub
 git tag vX.Y.Z
-
-# NOT WORKING anymore
-#git push origin --tags
-#make docker-push docker-password=<PASSWORD>
+git push origin --tags
+# manual: automated dockerhub builds are NOT working anymore
+make docker-push docker-password=<PASSWORD>
 ```
 
 ### Known issues
