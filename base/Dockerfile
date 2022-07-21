@@ -1,4 +1,4 @@
-FROM alpine:3.15
+FROM alpine:3.16
 
 ENV DISPLAY :1
 # alternative 1024x768x16
