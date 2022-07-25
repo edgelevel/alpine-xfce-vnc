@@ -7,12 +7,6 @@ docker exec -it phusion bash
 
 ##############################
 
-TODO
-* Docker Hub
-* Helm chart
-
-##############################
-
 * X Window System (X11, or simply X) is an architecture-independent system for remote graphical user interfaces and input device capabilities
 * Xfce is a lightweight desktop environment
 * Xvfb (short for X virtual framebuffer) is an in-memory display server and it allows to run graphical applications without a display
@@ -22,6 +16,10 @@ TODO
 * TigerVNC is a high-performance, platform-neutral implementation of VNC (Virtual Network Computing) and provides a client/server application
 
 ##############################
+
+# vnc alternative
+https://guacamole.apache.org
+https://github.com/xgfone/websocket
 
 https://unix.stackexchange.com/questions/596894/how-does-linuxs-display-work
 
@@ -44,6 +42,7 @@ https://www.cyberciti.biz/faq/install-and-configure-tigervnc-server-on-ubuntu-18
 https://www.journaldev.com/34074/install-tigervnc-on-ubuntu
 https://xtramemory.wordpress.com/2019/04/30/how-to-setup-vnc-x11vnc-on-ubuntu
 https://github.com/schuellerf/xfce-test
+https://github.com/BioDepot/GUIdock-VNC
 
 # alpine
 https://github.com/jkuri/alpine-xfce4
