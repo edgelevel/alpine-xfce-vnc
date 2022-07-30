@@ -20,6 +20,7 @@ docker exec -it phusion bash
 # vnc alternative
 https://guacamole.apache.org
 https://github.com/xgfone/websocket
+https://github.com/pgaskin/easy-novnc
 
 https://unix.stackexchange.com/questions/596894/how-does-linuxs-display-work
 
@@ -55,6 +56,15 @@ https://wiki.alpinelinux.org/wiki/Xfce_Setup
 https://www.amitnepal.com/alpine-linux-with-xfce-and-vnc-on-a-virtual-machine
 https://dev.to/nesterow/setup-minimal-kiosk-environment-with-alpine-linux-27b
 https://troglobit.com/2017/09/10/install-x-window-in-alpine-linux
+
+# build vnc/novnc from sources
+https://git.alpinelinux.org/aports/tree/testing/novnc/APKBUILD
+https://git.alpinelinux.org/aports/tree/testing/websockify/APKBUILD
+https://git.alpinelinux.org/aports/tree/community/x11vnc/APKBUILD
+https://github.com/archlinux/svntogit-community/blob/packages/x11vnc/trunk/PKGBUILD
+https://github.com/novnc/websockify/blob/master/docker/Dockerfile
+https://github.com/nicholaswilde/docker-novnc/blob/main/Dockerfile
+https://github.com/gotget/docker-novnc/blob/master/Dockerfile
 
 # alpine browsers
 https://github.com/ellerbrock/docker-collection
