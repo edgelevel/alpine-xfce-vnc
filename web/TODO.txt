@@ -27,6 +27,9 @@ WORKDIR ${HOME}
 #user="%(ENV_USER)s"
 #environment=HOME="%(ENV_HOME)s",USER="%(ENV_USER)s"
 
+# example add user
+https://github.com/cyd01/docker-vnc-xfce4/blob/master/Dockerfile
+
 --- background: issue on startup
 
 # change wallpaper: can't run xfconf-query or sed before supervisor starts

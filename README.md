@@ -56,6 +56,13 @@ Connect using [noVNC](https://novnc.com/info.html) via browser
 ## Development
 
 ```bash
+# alpine
+docker run --rm --name alpine -it alpine:edge
+
+# ubuntu
+docker run --rm --name phusion phusion/baseimage:master-amd64
+docker exec -it phusion bash
+
 # build images
 make docker-build
 
